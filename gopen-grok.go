@@ -54,6 +54,10 @@ func conversionSearchVersion(version string) string {
 	case "7":
 	case "7.0":
 		return "7.0.0_r1.0"
+	case "7.1.0":
+		return "7.1.0_r1.0"
+	case "7.1.1":
+		return "7.1.1_r1.0"
 	}
 	return "7.0.0_r1.0"
 }
@@ -65,5 +69,5 @@ func main() {
 	var symbol = flag.String("sy", "", "Symbol")
 	var version = flag.String("v", "7.0.0_r1.0", "Version")
 	flag.Parse()
-	sh.Command("open", "http://tools.oesf.biz/android-" + conversionSearchVersion(*version) + "/search?q=" + *fullSearch + "&defs=" + *definition + "&refs=" + *symbol + "&path=" + *filePath + "&hist=").Run()
+	sh.Command("open", "http://tools.oesf.biz/android-" + conversionSearchVersion(*version) + "/search?q=" + *fullSearch + "&defs=" + *definition + "&refs=" + *symbol + "&path=" + *filePath+"&hist=").Run()
 }
